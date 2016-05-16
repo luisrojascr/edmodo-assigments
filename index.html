@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="assigmentsApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Edmodo assigments application">
+    <meta name="author" content="Luis Rojas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dist/css/styles.min.css">
+</head>
+
+<body>
+   
+    <div class="container-fluid page" ng-controller="AssigmentCtrl">
+        <div class="sidebar col-md-4">
+            <h3>Assigments</h3>   
+            <a ng-repeat="assigment in assigments" ng-href="#/assigment/{{assigment.id}}" ng-click="setAssigment(assigment.id)">
+                <span class="title">{{assigment.title}}</span>
+                <span class="due-at">Due {{assigment.due_at | date:'mediumDate'}}</span>
+            </a>
+            
+        </div>
+        <div class="col-md-8">
+          <!-- Nav tabs -->
+          <ul ng-show="showTabs" class="nav nav-tabs" role="tablist">    
+            <li role="presentation" ng-class="{ active: $route.current.activetab == 'assigment'}"><a ng-href="#/assigment/{{id}}" aria-controls="assignment" role="tab" data-toggle="tab">Assigments</a></li>
+            <li role="presentation" ng-class="{ active: $route.current.activetab == 'submission'}"><a ng-href="#/submission/{{id}}" aria-controls="submission" role="tab" data-toggle="tab">Submission</a></li>
+          </ul>
+          <div ng-view></div>
+        </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Edmodo assigments project - Luis Rojas - 2016</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="dist/vendor/keepr.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script>
+    <script src="dist/js/app.js"></script>
+</body>
+
+</html>

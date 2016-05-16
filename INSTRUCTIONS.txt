@@ -1,5 +1,9 @@
-# edmodo-assigments
-Edmodo assigments project
+/*
+Author: Luis Rojas Salazar
+Web Developer
+*/
+
+/* Jetson Systems Developer Test */
 
 * Dependencies
 
@@ -10,11 +14,12 @@ Edmodo assigments project
 
 * How to use
 
-  - Clone the project into your local folder
+  - Open the console to the project folder
   - Run the commands to download the application dependencies
    > npm install 
    > bower install
 
   - Run gulp command to run local server and tasks
    > gulp
+    
     
